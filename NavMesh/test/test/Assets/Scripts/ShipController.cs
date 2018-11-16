@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class ShipController : MonoBehaviour {
 
-    private Rigidbody2D rb;
+//    private Rigidbody2D rb;
     
-    public float accelerationSpeed = 1.0f;
+    public float accelerationSpeed = 0.3f;
     public float rotateSpeed = 3.0f;
 	// Use this for initialization
 	void Start () {
-        rb = GetComponent<Rigidbody2D>();
-
+//        rb = GetComponent<Rigidbody2D>();
 		
-	}
-	
+	}	
 	// Update is called once per frame
 	void FixedUpdate () {
         var hori = Input.GetAxis("Horizontal");
@@ -25,11 +23,5 @@ public class ShipController : MonoBehaviour {
 
         transform.Rotate(0,0,-hori * rotateSpeed);
         transform.Translate(vert * accelerationSpeed,0,0);
-
-        
-
-
-
-
     }
 }

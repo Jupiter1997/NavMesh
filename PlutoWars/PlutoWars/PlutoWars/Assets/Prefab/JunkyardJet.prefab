@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4129673363907288}
   - component: {fileID: 212142393863654006}
   - component: {fileID: 114088103642077146}
+  - component: {fileID: 114513195347842870}
   m_Layer: 0
   m_Name: JunkyardJet
   m_TagString: Untagged
@@ -35,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1677731149744054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.43, y: -5.142375, z: 0}
-  m_LocalScale: {x: 1.7401664, y: 1.7401669, z: 1.7401669}
+  m_LocalPosition: {x: -9.1488, y: -3.9841, z: 0}
+  m_LocalScale: {x: 0.86462444, y: 0.8646247, z: 0.8646247}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -54,6 +55,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accelerationSpeed: 0.5
   rotateSpeed: 3
+--- !u!114 &114513195347842870
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1677731149744054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 141
+    i1: 101
+    i2: 192
+    i3: 72
+    i4: 34
+    i5: 123
+    i6: 85
+    i7: 20
+    i8: 169
+    i9: 1
+    i10: 10
+    i11: 201
+    i12: 215
+    i13: 228
+    i14: 37
+    i15: 77
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!212 &212142393863654006
 SpriteRenderer:
   m_ObjectHideFlags: 1

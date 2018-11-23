@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class ShipController : MonoBehaviour {
 
-//    private Rigidbody2D rb;
+
     
     public float accelerationSpeed = 0.3f;
     public float rotateSpeed = 3.0f;
-	// Use this for initialization
+
+    //Shoot
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn;
+
+    private float fireRate = 0.5f;
+    private float nextFire;
+
+
 	void Start () {
 //        rb = GetComponent<Rigidbody2D>();
 		
@@ -23,5 +31,43 @@ public class ShipController : MonoBehaviour {
 
         transform.Rotate(0,0,-hori * rotateSpeed);
         transform.Translate(vert * accelerationSpeed,0,0);
+        Boundary();
+
+        if (Input.GetKey("space") && Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            Shoot();
+        }
+
+
+
+
+    }
+    void Shoot()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
+        Destroy(bullet, 3.0f);
+    }
+    void Boundary()
+    {
+        if (transform.position.x <= -13)
+        {
+            transform.position = new Vector2(-13, transform.position.y);
+
+        }
+        else if (transform.position.x >= 13)
+        {
+            transform.position = new Vector2(13, transform.position.y);
+        }
+
+        if (transform.position.y <= -10)
+        {
+            transform.position = new Vector2(transform.position.x, -10);
+
+        }
+        else if (transform.position.y >= 10)
+        {
+            transform.position = new Vector2(transform.position.x, 10);
+        }
     }
 }

@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class ShipController : MonoBehaviour {
 
-
-    
-    public float accelerationSpeed = 0.3f;
-    public float rotateSpeed = 3.0f;
-
+    public float accelerationSpeed = 5f;
+    public float rotateSpeed = 180f;
+    private float shipBoundaryRadius = 0.5f;
     //Shoot
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
@@ -17,21 +15,45 @@ public class ShipController : MonoBehaviour {
     private float nextFire;
 
 
-	void Start () {
-//        rb = GetComponent<Rigidbody2D>();
-		
-	}	
-	// Update is called once per frame
-	void FixedUpdate () {
+    void Start() {
+
+    }
+    // Update is called once per frame
+    void FixedUpdate() {
         var hori = Input.GetAxis("Horizontal");
         var vert = Input.GetAxis("Vertical");
 
-        // rb.AddForce(transform.right * vert * accelerationSpeed * Time.deltaTime);
-        // rb.AddTorque(hori * rotateSpeed, ForceMode2D.Force);
+        //ROTATIONS
+        Quaternion rot = transform.rotation;
+        float z = rot.eulerAngles.z;
+        z -= hori * rotateSpeed * Time.deltaTime;
+        rot = Quaternion.Euler(0, 0, z);
 
-        transform.Rotate(0,0,-hori * rotateSpeed);
-        transform.Translate(vert * accelerationSpeed,0,0);
-        Boundary();
+        transform.rotation = rot;
+
+        //MOVEMENTS
+        Vector3 pos = transform.position;
+        Vector3 velocity = new Vector3(vert * accelerationSpeed * Time.deltaTime, 0, 0);
+        pos += rot * velocity;
+
+        //Boundary
+        if (pos.y - shipBoundaryRadius >= Camera.main.orthographicSize || pos.y + shipBoundaryRadius <= -Camera.main.orthographicSize)
+        {
+            Debug.Log("ROBSTONE");
+            pos.y = -pos.y;
+        }
+        float screenRatio = (float)Screen.width / (float)Screen.height;
+        float widthOrtho = Camera.main.orthographicSize * screenRatio;
+        if (pos.x - shipBoundaryRadius >= widthOrtho || pos.x + shipBoundaryRadius <= -widthOrtho)
+        {
+            pos.x = -pos.x;
+        }
+
+
+
+        transform.position = pos;
+
+
 
         if (Input.GetKey("space") && Time.time > nextFire)
         {
@@ -47,27 +69,5 @@ public class ShipController : MonoBehaviour {
     {
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
         Destroy(bullet, 3.0f);
-    }
-    void Boundary()
-    {
-        if (transform.position.x <= -13)
-        {
-            transform.position = new Vector2(-13, transform.position.y);
-
-        }
-        else if (transform.position.x >= 13)
-        {
-            transform.position = new Vector2(13, transform.position.y);
-        }
-
-        if (transform.position.y <= -10)
-        {
-            transform.position = new Vector2(transform.position.x, -10);
-
-        }
-        else if (transform.position.y >= 10)
-        {
-            transform.position = new Vector2(transform.position.x, 10);
-        }
     }
 }

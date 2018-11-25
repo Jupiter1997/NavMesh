@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class ShipController : MonoBehaviour {
+public class ShipController : NetworkBehaviour {
 
     public float accelerationSpeed = 5f;
     public float rotateSpeed = 180f;
@@ -11,15 +12,35 @@ public class ShipController : MonoBehaviour {
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
 
-    private float fireRate = 0.5f;
+    public float fireRate = 0.5f;
     private float nextFire;
+
+    //Grabbing selected ship and player nuber
+    private int selectedShipIndex;
+    private int playerCount;
+
+    public Sprite[] shipSprite;
 
 
     void Start() {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
+        selectedShipIndex = PlayerPrefs.GetInt("SelectedShip");
+        playerCount = PlayerPrefs.GetInt("PlayerCount");
+
+        this.GetComponent<SpriteRenderer>().sprite = shipSprite[selectedShipIndex - 1];
+
 
     }
     // Update is called once per frame
     void FixedUpdate() {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
+
         var hori = Input.GetAxis("Horizontal");
         var vert = Input.GetAxis("Vertical");
 
@@ -49,20 +70,13 @@ public class ShipController : MonoBehaviour {
             pos.x = -pos.x;
         }
 
-
-
         transform.position = pos;
-
-
 
         if (Input.GetKey("space") && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
             Shoot();
         }
-
-
-
 
     }
     void Shoot()

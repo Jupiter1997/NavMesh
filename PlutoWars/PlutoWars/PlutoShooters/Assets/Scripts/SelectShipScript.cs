@@ -6,16 +6,6 @@ using UnityEngine.SceneManagement;
 public class SelectShipScript : MonoBehaviour {
 
     
-
-	// Use this for initialization
-	void Start () {
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
     public void SetShipIndex(int index)
     {
         PlayerPrefs.SetInt("SelectedShip", index);
@@ -24,6 +14,14 @@ public class SelectShipScript : MonoBehaviour {
     {
        // Debug.Log(PlayerPrefs.GetInt("SelectedShip"));
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    int counter = 0;
+    public void PlayerCounter()
+    {
+        counter = counter + 1;
+        PlayerPrefs.SetInt("PlayerCount", counter);
+        Debug.Log("Player :" +counter + "joins");
     }
 
 }

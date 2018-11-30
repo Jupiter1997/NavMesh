@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 9}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -40,8 +40,8 @@ MonoBehaviour:
     y: 0
     width: 277
     height: 957
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 332, y: 271}
   m_MaxSize: {x: 14002, y: 10021}
   vertical: 0
-  controlID: 106
+  controlID: 118
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,10 +141,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 957
-  m_MinSize: {x: 887, y: 492}
-  m_MaxSize: {x: 18004, y: 14042}
+  m_MinSize: {x: 885, y: 492}
+  m_MaxSize: {x: 18002, y: 14042}
   vertical: 0
-  controlID: 46
+  controlID: 164
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_MinSize: {x: 610, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 1
-  controlID: 47
+  controlID: 165
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_MinSize: {x: 610, y: 221}
   m_MaxSize: {x: 12010, y: 4021}
   vertical: 0
-  controlID: 48
+  controlID: 166
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -398,18 +398,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefab
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefab
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\jupit\OneDrive\Documents\GitHub\Navmesh\NavMesh\PlutoWars\PlutoWars\PlutoShooters
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 2c290000
-    m_LastClickedID: 10540
+    m_SelectedIDs: d4290000
+    m_LastClickedID: 10708
     m_ExpandedIDs: 000000009e280000e0290000702a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -465,7 +465,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000183400002a3400001c2900008e2b00006233000000000000ae2d00009e2d0000be280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -556,7 +556,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 90fcfbff82fdfbff4cfffbff50fffbff70fffbfffe12fcff9613fcff7815fcff8015fcff441bfcff465bfcff266bfcffb86bfcff966dfcff9a6dfcff4692fcffd892fcffb494fcffb894fcffb2a7fcff54a8fcff30aafcff34aafcffacc1fcff8ec2fcff70c4fcff78c4fcff42d8fcff4cf5fcffdef7fcff7239fdff823dfdffc051fdffa852fdff8454fdff8854fdff2a6cfdff166dfdfff26efdfff66efdfff4aafdffa6fbfffff4ffffff00000000d42c000056420000f8580000
+    m_ExpandedIDs: e6fafbff82fbfbff4efdfbff52fdfbff72fdfbffb600fcff4c01fcff1803fcff1c03fcff3c03fcff0608fcffac08fcff780afcff7c0afcff9c0afcff6e10fcff6211fcff2e13fcff3213fcff5213fcff821ffcff2620fcfff821fcff0022fcff2422fcffe627fcffb847fcff6048fcff1a4afcff244afcff444afcff5a58fcff0259fcffcc5afcffe85afcff1a5bfcff2e36ffffac67ffff5068ffff086affff126affff326affff9a84ffff2c85ffffe486ffffee86ffff0e87ffffcaf6ffffa6fbffff00000000ec2c0000a6330000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: Text
@@ -567,7 +567,7 @@ MonoBehaviour:
         y: 0
         width: 0
         height: 0
-      m_UserData: -181892
+      m_UserData: -172906
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -606,14 +606,14 @@ MonoBehaviour:
     width: 553
     height: 665
   m_SceneLighting: 1
-  lastFramingTime: 4008.507759927214
+  lastFramingTime: 12677.581494860167
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -7.745414, y: 3.2257385, z: 18.238281}
+    m_Target: {x: 0, y: 0, z: -10}
     speed: 2
-    m_Value: {x: -7.745414, y: 3.2257385, z: 18.238281}
+    m_Value: {x: 0, y: 0, z: -10}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -640,15 +640,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 22.40235
+    m_Target: 22
     speed: 2
-    m_Value: 22.40235
+    m_Value: 22
   m_Ortho:
     m_Target: 1
     speed: 2
     m_Value: 1
   m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: 0.08717229, y: -0.89959055, z: 0.21045254, w: 0.3726226}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 

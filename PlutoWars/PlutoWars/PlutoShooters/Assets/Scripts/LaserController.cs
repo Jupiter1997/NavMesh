@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LaserController : MonoBehaviour {
 
@@ -18,10 +19,14 @@ public class LaserController : MonoBehaviour {
 	}
     private void OnCollisionEnter2D(Collision2D other)
     {
+        
         if (other.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject);
+            Destroy(this.gameObject);             
             Debug.Log("Hit " + other.gameObject.name);
         }
+
+
     }
 }
+

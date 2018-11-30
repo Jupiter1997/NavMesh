@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class ShipController : NetworkBehaviour {
@@ -75,13 +76,15 @@ public class ShipController : NetworkBehaviour {
         if (Input.GetKey("space") && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
-            Shoot();
+            CmdShoot();
         }
 
     }
-    void Shoot()
+    [Command]
+    void CmdShoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
+        NetworkServer.Spawn(bullet);
         Destroy(bullet, 3.0f);
     }
 }

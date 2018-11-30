@@ -8,9 +8,7 @@ public class PlayerSceneManager : NetworkBehaviour {
 
     private int playerCount;
   //  public GameObject[] Ships;
-
     NetworkClient network;
-
     public Text PCount;
 
 
@@ -26,18 +24,16 @@ public class PlayerSceneManager : NetworkBehaviour {
 
         //Sets the sprite to player prefab
 
-       
-
 
         //Starts Host
-        if (playerCount == 1)
-        {
-            network = GetComponent<NetworkManager>().StartHost();
-        }
-        if(playerCount == 2)
-        {
-            network = GetComponent<NetworkManager>().StartClient();  
-        }
+        //if (playerCount == 1)
+        //{
+        //    network = GetComponent<NetworkManager>().StartHost();
+        //}
+        //if(playerCount == 2)
+        //{
+        //    network = GetComponent<NetworkManager>().StartClient();  
+        //}
        
 
        
@@ -45,7 +41,7 @@ public class PlayerSceneManager : NetworkBehaviour {
     }
     // Update is called once per frame
     void Update () {
-        PCount.text = "Player count: " + playerCount;
+       // PCount.text = "Player count: " + playerCount;
 		
 	}
 

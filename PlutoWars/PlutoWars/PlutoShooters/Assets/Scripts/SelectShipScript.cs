@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SelectShipScript : MonoBehaviour {
 
-    
+    private void Start()
+    {
+        Button defButton = GameObject.Find("BebopButton").GetComponent<Button>();
+        defButton.Select();
+    }
     public void SetShipIndex(int index)
     {
         PlayerPrefs.SetInt("SelectedShip", index);

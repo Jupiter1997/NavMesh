@@ -1,7 +1,7 @@
 WindowsStandalone
 75cd0c6c744b9733ef29aa6c59ece2b1 Assembly-CSharp.dll:TMPro.Examples.VertexZoom
 c906602d9b43cc5e075f80e1d8ae7c79 Assembly-CSharp.dll:TMPro.Examples.Benchmark01_UGUI
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Health
+fd13b1c437d35f5a8aa5dfba25cfe367 Assembly-CSharp.dll:.Health
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 970a95104359198fe1a98ef48655de8c UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -223,3 +223,5 @@ dd5481137759597d614818793c90a7fe Assembly-CSharp.dll:.LaserController
 af7666733efcc974926d7d470e1732a6 Assembly-CSharp.dll:TMPro.Examples.SkewTextExample
 34e025057ef78b1bf238460cdf6583a3 Assembly-CSharp.dll:TMPro.Examples.ObjectSpin
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TMPro.Examples.SimpleScript
+8a6a735a3f591d62873da30cb4ea9bc7 Assembly-CSharp.dll:.LockRotation
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LockRotation_Beta

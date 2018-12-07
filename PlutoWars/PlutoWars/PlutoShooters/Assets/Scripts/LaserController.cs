@@ -19,11 +19,16 @@ public class LaserController : MonoBehaviour {
 	}
     private void OnCollisionEnter2D(Collision2D other)
     {
-        
+        var hit = other.gameObject;
+        var health = hit.GetComponent<Health>();
         if (other.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject);             
-            Debug.Log("Hit " + other.gameObject.name);
+            if (health != null)
+            {
+                health.TakeDamage(1);
+            }
+            
+            Destroy(this.gameObject);
         }
 
 

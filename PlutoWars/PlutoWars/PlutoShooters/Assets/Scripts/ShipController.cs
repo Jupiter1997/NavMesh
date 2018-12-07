@@ -31,6 +31,8 @@ public class ShipController : NetworkBehaviour {
         selectedShipIndex = PlayerPrefs.GetInt("SelectedShip");
         playerCount = PlayerPrefs.GetInt("PlayerCount");
 
+        Debug.Log(selectedShipIndex);
+
         this.GetComponent<SpriteRenderer>().sprite = shipSprite[selectedShipIndex - 1];
 
 

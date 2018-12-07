@@ -8,25 +8,35 @@ using UnityEngine.UI;
 public class PlayerSceneManager : NetworkBehaviour {
     [SyncVar]
     private int playerCount;
-  //  public GameObject[] Ships;
-    NetworkClient network;
     public Text PCount;
 
-
+    
     // Use this for initialization
     void Start()
     {
+        var numOfPlayers = Network.connections.Length;
         playerCount = PlayerPrefs.GetInt("PlayerCount");
-        Debug.Log(PlayerPrefs.GetInt("PlayerCount"));
+        Debug.Log("Player Count "+ PlayerPrefs.GetInt("PlayerCount"));
 
-
-     
-
+        Debug.Log("Players " + GetConnectionCount());
+               
     }
-    void Update () {
+    
+    public int GetConnectionCount()
+    {
+        int count = 0;
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        {
+            foreach (GameObject item in players)
+            {
+                count++;
+            }
+        }
+      
 
-		
-	}
+        return count;
+        
+    }
 
 
 

@@ -14,7 +14,7 @@ public class PlayerSceneManager : NetworkBehaviour {
     // Use this for initialization
     void Start()
     {
-        var numOfPlayers = Network.connections.Length;
+      //  var numOfPlayers = Network.connections.Length;
         playerCount = PlayerPrefs.GetInt("PlayerCount");
         Debug.Log("Player Count "+ PlayerPrefs.GetInt("PlayerCount"));
 

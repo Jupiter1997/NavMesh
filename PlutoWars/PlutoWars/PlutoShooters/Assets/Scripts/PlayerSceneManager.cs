@@ -16,9 +16,8 @@ public class PlayerSceneManager : NetworkBehaviour {
     {
       //  var numOfPlayers = Network.connections.Length;
         playerCount = PlayerPrefs.GetInt("PlayerCount");
-        Debug.Log("Player Count "+ PlayerPrefs.GetInt("PlayerCount"));
 
-        Debug.Log("Players " + GetConnectionCount());
+        Debug.Log("Players Connected" + GetConnectionCount());
                
     }
     

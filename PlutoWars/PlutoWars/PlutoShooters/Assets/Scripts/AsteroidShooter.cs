@@ -15,7 +15,17 @@ public class AsteroidShooter : MonoBehaviour {
 	void Update () {
 		
 	}
-    
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+
+        if (other.gameObject.tag == "Player")
+        {
+
+
+            Debug.Log("hit");
+            Destroy(this.gameObject);
+        }
+    }
     void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.transform.position, bulletSpawn.transform.rotation);

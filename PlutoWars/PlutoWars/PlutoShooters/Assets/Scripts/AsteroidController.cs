@@ -10,7 +10,7 @@ public class AsteroidController : NetworkBehaviour
     GameObject asteroidclone;
     public float startIn = 1;
     public float every = 2;
-    Rigidbody2D rb;
+    
 
 
     // Use this for initialization
@@ -18,7 +18,7 @@ public class AsteroidController : NetworkBehaviour
 
         
         InvokeRepeating("Rpcspawn", startIn, every);
-        rb = GetComponent<Rigidbody2D>();
+        
 
     }
 
@@ -37,17 +37,7 @@ public class AsteroidController : NetworkBehaviour
         //    return;
         //}
     }
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        
-        if (other.gameObject.tag == "Player")
-        {
-
-
-            Debug.Log("hit");
-            Destroy(this.gameObject);
-        }
-    }
+    
 
 
 

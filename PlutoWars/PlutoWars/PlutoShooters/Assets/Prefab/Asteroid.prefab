@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50228802655105062}
   - component: {fileID: 114647421999193022}
   - component: {fileID: 114648448111038870}
+  - component: {fileID: 114164357453131278}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Untagged
@@ -53,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1069397059829218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.8224273, y: -3.321557, z: 0}
+  m_LocalPosition: {x: -4.05608, y: -0.73421144, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4473646878360102}
@@ -108,6 +109,27 @@ CircleCollider2D:
   m_Offset: {x: -0.041555107, y: 0.031166553}
   serializedVersion: 2
   m_Radius: 0.7917278
+--- !u!114 &114164357453131278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1069397059829218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 2
+  m_SendInterval: 0.033333335
+  m_SyncRotationAxis: 3
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114647421999193022
 MonoBehaviour:
   m_ObjectHideFlags: 1

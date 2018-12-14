@@ -12,7 +12,6 @@ public class Health : NetworkBehaviour
     [SyncVar(hook = "OnChangeHealth")]
     public int _currentLives = _maxlives;
     public Text LivesText;
-    public Text DeadPlayer;
     public bool destroyOnDeath;
     public NetworkStartPosition[] spawnPositions;
 
@@ -33,19 +32,16 @@ public class Health : NetworkBehaviour
         
         if (_currentLives <= 0) // ME DEAD
         {
-            //if (destroyOnDeath)
-            //{
-            //    Destroy(gameObject);
-            //}
-            //else
-            //{
-            //    _currentLives = _maxlives;
-            //     Debug.Log("Dead");
-            //   // RpcRespawn();
-            //}
-            Destroy(gameObject);
-            DeadPlayer.text = "Player Dead";
-            
+            if (destroyOnDeath)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                _currentLives = _maxlives;
+                 Debug.Log("Dead");
+               // RpcRespawn();
+            }
         }
 
     }

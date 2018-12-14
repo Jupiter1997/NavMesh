@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class SelectShipScript : MonoBehaviour {
 
-    public static int shipSpriteindex;
-
     private void Start()
     {
         Button defButton = GameObject.Find("BebopButton").GetComponent<Button>();
@@ -16,7 +14,6 @@ public class SelectShipScript : MonoBehaviour {
     public void SetShipIndex(int index)
     {
         PlayerPrefs.SetInt("SelectedShip", index);
-        shipSpriteindex = index;
     }
     public void GetShipIndex()
     {

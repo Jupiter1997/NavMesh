@@ -271,15 +271,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4921816261370150, guid: 38583b07f6005c449b0d3154ee914629, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4921816261370150, guid: 38583b07f6005c449b0d3154ee914629, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4921816261370150, guid: 38583b07f6005c449b0d3154ee914629, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4921816261370150, guid: 38583b07f6005c449b0d3154ee914629, type: 2}
       propertyPath: m_LocalRotation.w
@@ -287,8 +287,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4921816261370150, guid: 38583b07f6005c449b0d3154ee914629, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114388365761533496, guid: 38583b07f6005c449b0d3154ee914629,
+        type: 2}
+      propertyPath: m_PlayerPrefab
+      value: 
+      objectReference: {fileID: 1404829592209586, guid: 40201c1743fe91644bf46b0fef573cb7,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38583b07f6005c449b0d3154ee914629, type: 2}
   m_IsPrefabAsset: 0
@@ -359,7 +365,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Player Lives:
+  m_Text: '
 
 '
 --- !u!222 &1591230384
@@ -501,7 +507,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4946777663269726, guid: 25c4dbc999b4bee45af77779dee56cde, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25c4dbc999b4bee45af77779dee56cde, type: 2}
@@ -534,6 +540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 235c2be7ce622b94b9116a2acb672b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerNumber: 0
 --- !u!114 &2046831414
 MonoBehaviour:
   m_ObjectHideFlags: 0

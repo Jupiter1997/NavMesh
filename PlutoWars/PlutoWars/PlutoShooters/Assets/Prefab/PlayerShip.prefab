@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 114643354602884160}
   - component: {fileID: 114840241841231198}
   - component: {fileID: 114823058684415782}
-  - component: {fileID: 114023320577907934}
+  - component: {fileID: 114325961438701876}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Player
@@ -199,7 +199,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1404829592209586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.3744397, y: -4.168468, z: 0}
+  m_LocalPosition: {x: -1.8012848, y: 0.3870201, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4010243200562464}
@@ -224,7 +224,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.4, y: 1.85}
+    oldSize: {x: 2.2, y: 2.5}
     newSize: {x: 2.4, y: 1.85}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -244,27 +244,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e24154e1f96eb247a081843a19ba8c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114023320577907934
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1404829592209586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.033333335
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 5
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 5
-  m_InterpolateMovement: 1
 --- !u!114 &114189189385986910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -314,6 +293,27 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 10
+--- !u!114 &114325961438701876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1404829592209586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0.033333335
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114382789260016136
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -413,6 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentLives: 10
   LivesText: {fileID: 114977764971396890}
+  DeadPlayer: {fileID: 0}
   destroyOnDeath: 0
   spawnPositions: []
 --- !u!114 &114840241841231198
@@ -431,12 +432,12 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1053152210924510, guid: 1cc4ff9f6c4ed5643b2cf2730de013a1,
     type: 2}
   bulletSpawn: {fileID: 4010243200562464}
+  Shields:
+  - {fileID: 1052445733644530, guid: a40a05d7b4d935f46a10ca9f46e5813c, type: 2}
+  - {fileID: 1993156006872192, guid: 37c56c0c997ace24480629cee15dbd65, type: 2}
+  - {fileID: 1492684445881792, guid: 9d68c3f84641c2d43814ca07d13d39f4, type: 2}
+  - {fileID: 1343422248001044, guid: 06968155f7c39e24fadd2642ae203305, type: 2}
   fireRate: 0.5
-  shipSprite:
-  - {fileID: 21300000, guid: 722f1a3400452114ea8fd48699f57beb, type: 3}
-  - {fileID: 21300000, guid: 92e8a393bc480fd4f90a6c1c3b3d8c7e, type: 3}
-  - {fileID: 21300000, guid: 28635eff1ec496743bf333d9a8c44cc4, type: 3}
-  - {fileID: 21300000, guid: 19218eb52d94c8f4e9fb46b596a2658f, type: 3}
   ShipIndex: 0
 --- !u!114 &114875383620061910
 MonoBehaviour:
@@ -527,7 +528,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 722f1a3400452114ea8fd48699f57beb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 19218eb52d94c8f4e9fb46b596a2658f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

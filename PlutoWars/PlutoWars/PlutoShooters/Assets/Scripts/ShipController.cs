@@ -13,6 +13,8 @@ public class ShipController : NetworkBehaviour {
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
 
+    public GameObject[] Shields;
+
     public float fireRate = 0.5f;
     private float nextFire;
 
@@ -23,6 +25,8 @@ public class ShipController : NetworkBehaviour {
     void Start()
     {
         GetComponent<SpriteRenderer>().sprite = MyNetworkManager.m_Singleton.ship[ShipIndex];
+        var myNewSmoke = Instantiate(Shields[ShipIndex], this.transform.position, Quaternion.identity);
+        myNewSmoke.transform.parent = gameObject.transform;
     }
     // Update is called once per frame
     void FixedUpdate() {
@@ -61,7 +65,9 @@ public class ShipController : NetworkBehaviour {
 
         transform.position = pos;
 
-        
+
+
+
 
         if (Input.GetKey("space") && Time.time > nextFire)
         {

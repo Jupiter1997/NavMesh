@@ -6,7 +6,7 @@ Assets/Scenes/GameMenu.unity
 Assets/Scenes/SelectShipScene.unity
 Assets/Scenes/PlayScene.unity
 SceneListEnd?
-14f60ccc9345339907a2377a9e2b8a64 Assembly-CSharp.dll:.Health
+36b0849b7e7f77a20a93838b171cfd54 Assembly-CSharp.dll:.Health
 486cd95c82d8305219c352c06b776e1f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 9e61f3535f3c55760a1cedfbd114f4af UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 754551afe4f2531f58476bf14c510657 UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -19,7 +19,7 @@ c7dd12c15208b0447e101f80038706df UnityEngine.Timeline.dll:UnityEngine.Timeline.A
 0ddb2c46096a1e59e0dce07886ce4769 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 0ddb2c46096a1e59e0dce07886ce4769 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 64f3a13c1277a7f1324321d93d0ec13b UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-2e3b4e6eb7a73c6a834923502c1054ac Assembly-CSharp.dll:.ShipController
+3b6d473f5c0e40b733786875053a41ba Assembly-CSharp.dll:.ShipController
 53cefe5d98cadefbab750835e70b89c0 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 486cd95c82d8305219c352c06b776e1f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 da2091a04d360891450faf16cdf621f1 UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -120,7 +120,7 @@ d75dc834c5dec688db75a55a1724c90f UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 e1ea12ca952c81d81a9a21fdf34446ed UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 98d69a140ec0084cde3b6a5e09aea295 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 dfd33ff9ae3ce8d7ca1f22b475ec2387 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
-486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.PlayerSceneManager
+0b1dfd0b710155b0d23652d7f3559e60 Assembly-CSharp.dll:.PlayerSceneManager
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.MainMenu
 cecf74a4a014467f492fa5579fb4b397 Facebook.Unity.Settings.dll:Facebook.Unity.Settings.FacebookSettings
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.SelectShipScript
@@ -160,3 +160,4 @@ dfd33ff9ae3ce8d7ca1f22b475ec2387 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.LockRotation_Beta
 d3baf945a28bf6b4a4706c8193e7459e Assembly-CSharp.dll:.LaserController
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.ShieldScript

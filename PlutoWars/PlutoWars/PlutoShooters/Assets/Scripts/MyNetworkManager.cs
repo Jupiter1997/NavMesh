@@ -8,7 +8,7 @@ public class MyNetworkManager : NetworkManager {
     public Dictionary<int, int> ShipSelection = new Dictionary<int, int>();
 
     public static MyNetworkManager m_Singleton;
-
+    GameObject player;
     public Sprite[] ship;
     int shipIndex = 0;
 
@@ -29,8 +29,9 @@ public class MyNetworkManager : NetworkManager {
         NetworkMessage message = extraMessageReader.ReadMessage<NetworkMessage>();
         int selectedShip = message.selectedShipIndex;
 
-        GameObject player = Instantiate(playerPrefab, Random.Range(-10, 10) * Vector3.right, Quaternion.identity) as GameObject;
+        player = Instantiate(playerPrefab, Random.Range(-10, 10) * Vector3.right, Quaternion.identity) as GameObject;
         player.GetComponent<ShipController>().ShipIndex = selectedShip;
+
 
         NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
     }
@@ -38,9 +39,9 @@ public class MyNetworkManager : NetworkManager {
     {
         NetworkMessage msg = new NetworkMessage();
         msg.selectedShipIndex = shipIndex;
-
         ClientScene.AddPlayer(conn, 0, msg);
     }
+
     
 
 }

@@ -15,6 +15,7 @@ public class AsteroidShooter : MonoBehaviour {
 	void Update () {
 		
 	}
+    
     void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.transform.position, bulletSpawn.transform.rotation);

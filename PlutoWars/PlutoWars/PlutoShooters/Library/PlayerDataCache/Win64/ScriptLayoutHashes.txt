@@ -19,7 +19,7 @@ c7dd12c15208b0447e101f80038706df UnityEngine.Timeline.dll:UnityEngine.Timeline.A
 0ddb2c46096a1e59e0dce07886ce4769 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 0ddb2c46096a1e59e0dce07886ce4769 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 64f3a13c1277a7f1324321d93d0ec13b UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-7cd4505582317a7355a9c7f5a88a39bb Assembly-CSharp.dll:.ShipController
+2e3b4e6eb7a73c6a834923502c1054ac Assembly-CSharp.dll:.ShipController
 53cefe5d98cadefbab750835e70b89c0 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 486cd95c82d8305219c352c06b776e1f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 da2091a04d360891450faf16cdf621f1 UnityEngine.UI.dll:UnityEngine.UI.Button

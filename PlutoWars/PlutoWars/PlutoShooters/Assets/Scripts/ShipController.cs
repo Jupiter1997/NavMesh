@@ -18,21 +18,14 @@ public class ShipController : NetworkBehaviour {
 
     //Grabbing selected ship and player nuber
     private int selectedShipIndex;
-    private int playerCount;
 
     public Sprite[] shipSprite;
 
+    [SyncVar]
+    public int ShipIndex;
 
     void Start() {
-        if (!isLocalPlayer)
-        {
-            return;
-        }
-        selectedShipIndex = PlayerPrefs.GetInt("SelectedShip");
-        playerCount = PlayerPrefs.GetInt("PlayerCount");
-
-        this.GetComponent<SpriteRenderer>().sprite = shipSprite[selectedShipIndex - 1];
-
+        GetComponent<SpriteRenderer>().sprite = MyNetworkManager.m_Singleton.ship[ShipIndex];
 
     }
     // Update is called once per frame

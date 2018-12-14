@@ -17,3 +17,4 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/EnterScene.unity
     guid: a4c680022bf74ce469a35e897e94d31a
+  m_configObjects: {}

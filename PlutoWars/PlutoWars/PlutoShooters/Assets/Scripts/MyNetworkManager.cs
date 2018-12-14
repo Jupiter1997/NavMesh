@@ -7,20 +7,40 @@ public class MyNetworkManager : NetworkManager {
 
     public Dictionary<int, int> ShipSelection = new Dictionary<int, int>();
 
-    public Sprite[] ShipsSprite;
+    public static MyNetworkManager m_Singleton;
 
-	// Use this for initialization
-	void Start () {
-       // PlayerPrefs.GetInt("SelectedShip");
-		
-	}
+    public Sprite[] ship;
+    int shipIndex = 0;
 
-    // Update is called once per frame
-    public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId)
+    void Start()
     {
-        GameObject playerGB = Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
-        playerGB.GetComponent<SpriteRenderer>().sprite = ShipsSprite[PlayerPrefs.GetInt("SelectedShip") - 1];
-        Debug.Log("");
-        NetworkServer.AddPlayerForConnection(conn, playerGB, playerControllerId);
+        shipIndex = PlayerPrefs.GetInt("SelectedShip");
+        Debug.Log("Manager Ship: " + shipIndex);
+
+        m_Singleton = this;
     }
+
+    public class NetworkMessage : MessageBase
+    {
+        public int selectedShipIndex;
+    }
+    public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId, NetworkReader extraMessageReader)
+    {
+        NetworkMessage message = extraMessageReader.ReadMessage<NetworkMessage>();
+        int selectedShip = message.selectedShipIndex;
+
+        GameObject player = Instantiate(playerPrefab, Random.Range(-10, 10) * Vector3.right, Quaternion.identity) as GameObject;
+        player.GetComponent<ShipController>().ShipIndex = selectedShip;
+
+        NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
+    }
+    public override void OnClientConnect(NetworkConnection conn)
+    {
+        NetworkMessage msg = new NetworkMessage();
+        msg.selectedShipIndex = shipIndex;
+
+        ClientScene.AddPlayer(conn, 0, msg);
+    }
+    
+
 }

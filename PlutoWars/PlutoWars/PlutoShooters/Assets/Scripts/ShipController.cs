@@ -13,29 +13,20 @@ public class ShipController : NetworkBehaviour {
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
 
+    public GameObject[] Shields;
+
     public float fireRate = 0.5f;
     private float nextFire;
 
-    //Grabbing selected ship and player nuber
-    private int selectedShipIndex;
-    private int playerCount;
 
-    public Sprite[] shipSprite;
+    [SyncVar]
+    public int ShipIndex;
 
-
-    void Start() {
-        if (!isLocalPlayer)
-        {
-            return;
-        }
-        selectedShipIndex = PlayerPrefs.GetInt("SelectedShip");
-        playerCount = PlayerPrefs.GetInt("PlayerCount");
-
-        Debug.Log(selectedShipIndex);
-
-        this.GetComponent<SpriteRenderer>().sprite = shipSprite[selectedShipIndex - 1];
-
-
+    void Start()
+    {
+        GetComponent<SpriteRenderer>().sprite = MyNetworkManager.m_Singleton.ship[ShipIndex];
+        var myNewSmoke = Instantiate(Shields[ShipIndex], this.transform.position, Quaternion.identity);
+        myNewSmoke.transform.parent = gameObject.transform;
     }
     // Update is called once per frame
     void FixedUpdate() {
@@ -63,7 +54,6 @@ public class ShipController : NetworkBehaviour {
         //Boundary
         if (pos.y - shipBoundaryRadius >= Camera.main.orthographicSize || pos.y + shipBoundaryRadius <= -Camera.main.orthographicSize)
         {
-            Debug.Log("ROBSTONE");
             pos.y = -pos.y;
         }
         float screenRatio = (float)Screen.width / (float)Screen.height;
@@ -74,6 +64,10 @@ public class ShipController : NetworkBehaviour {
         }
 
         transform.position = pos;
+
+
+
+
 
         if (Input.GetKey("space") && Time.time > nextFire)
         {
@@ -89,4 +83,5 @@ public class ShipController : NetworkBehaviour {
         NetworkServer.Spawn(bullet);
         Destroy(bullet, 3.0f);
     }
+
 }

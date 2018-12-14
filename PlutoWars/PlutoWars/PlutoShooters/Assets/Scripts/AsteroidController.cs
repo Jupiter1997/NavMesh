@@ -31,11 +31,11 @@ public class AsteroidController : NetworkBehaviour
 
         //    Timer = 15f;
         //}
-        if (!isLocalPlayer)
-        {
-            Destroy(asteroidclone);
-            return;
-        }
+        //if (!isLocalPlayer)
+        //{
+        //    Destroy(asteroidclone);
+        //    return;
+        //}
     }
 
   

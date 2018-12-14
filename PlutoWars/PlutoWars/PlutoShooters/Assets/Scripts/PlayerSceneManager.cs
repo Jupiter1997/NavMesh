@@ -6,19 +6,21 @@ using UnityEngine.UI;
 
 
 public class PlayerSceneManager : NetworkBehaviour {
-    [SyncVar]
-    private int playerCount;
-    public Text PCount;
 
-    
+    public static PlayerSceneManager PM;
+
+    [SyncVar]
+    public int PlayerNumber;
+
     // Use this for initialization
     void Start()
     {
-      //  var numOfPlayers = Network.connections.Length;
-        playerCount = PlayerPrefs.GetInt("PlayerCount");
-        Debug.Log("Player Count "+ PlayerPrefs.GetInt("PlayerCount"));
+        //  var numOfPlayers = Network.connections.Length;
 
-        Debug.Log("Players " + GetConnectionCount());
+        PM = this;
+
+        Debug.Log("Players Connected" + GetConnectionCount());
+        PlayerNumber = GetConnectionCount();
                
     }
     

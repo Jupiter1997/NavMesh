@@ -224,7 +224,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'PlayerCount:'
+  m_Text: '
+
+'
 --- !u!222 &608563288
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -257,6 +259,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114388365761533496, guid: 38583b07f6005c449b0d3154ee914629,
+        type: 2}
+      propertyPath: m_SpawnPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4921816261370150, guid: 38583b07f6005c449b0d3154ee914629, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -294,6 +301,12 @@ Prefab:
       propertyPath: m_PlayerPrefab
       value: 
       objectReference: {fileID: 1404829592209586, guid: 40201c1743fe91644bf46b0fef573cb7,
+        type: 2}
+    - target: {fileID: 114388365761533496, guid: 38583b07f6005c449b0d3154ee914629,
+        type: 2}
+      propertyPath: m_SpawnPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 1826990190236942, guid: 4b5ea4c3b36367648b388efca6045dba,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38583b07f6005c449b0d3154ee914629, type: 2}
@@ -375,6 +388,81 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1591230381}
   m_CullTransparentMesh: 0
+--- !u!1 &1655030723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1655030725}
+  - component: {fileID: 1655030724}
+  m_Layer: 0
+  m_Name: backgroundPluto
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1655030724
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1655030723}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: b1c63a91cd70ed643bce49481af75f35, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.24313726}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 8, y: 6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1655030725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1655030723}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.058006763, y: -0.6, z: 0}
+  m_LocalScale: {x: 3.8907, y: 3.8907, z: 3.8907}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1809136967
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,6 +596,21 @@ Prefab:
     - target: {fileID: 4946777663269726, guid: 25c4dbc999b4bee45af77779dee56cde, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212844650480253680, guid: 25c4dbc999b4bee45af77779dee56cde,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.48112494
+      objectReference: {fileID: 0}
+    - target: {fileID: 212844650480253680, guid: 25c4dbc999b4bee45af77779dee56cde,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.45122817
+      objectReference: {fileID: 0}
+    - target: {fileID: 212844650480253680, guid: 25c4dbc999b4bee45af77779dee56cde,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.49056602
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25c4dbc999b4bee45af77779dee56cde, type: 2}

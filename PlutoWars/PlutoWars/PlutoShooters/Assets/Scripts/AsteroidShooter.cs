@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class AsteroidShooter : MonoBehaviour {
+public class AsteroidShooter : NetworkBehaviour {
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
+
+    public GameObject powerUp;
     // Use this for initialization
     void Start () {
         InvokeRepeating("Shoot", 1, 1);
@@ -17,13 +19,29 @@ public class AsteroidShooter : MonoBehaviour {
 	}
     private void OnCollisionEnter2D(Collision2D other)
     {
-
+        var hit = other.gameObject;
+        var health = hit.GetComponent<Health>();
         if (other.gameObject.tag == "Player")
         {
+            if (health != null)
+            {
+                health.TakeDamage(1);
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
 
-
-            Debug.Log("hit");
+           
+        }
+        if (other.gameObject.tag == "bullet")
+        {
             Destroy(this.gameObject);
+            Destroy(other.gameObject);
+            GameObject jiabin = Instantiate(powerUp, this.transform.position, this.transform.rotation) as GameObject;
+            NetworkServer.Spawn(jiabin);
+            
         }
     }
     void Shoot()

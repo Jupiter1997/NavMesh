@@ -9,6 +9,10 @@ public class ShipController : NetworkBehaviour {
     public float accelerationSpeed = 5f;
     public float rotateSpeed = 180f;
     private float shipBoundaryRadius = 0.5f;
+
+    bool isSpeedUp = false;
+    float timer = 5;
+
     //Shoot
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
@@ -65,8 +69,23 @@ public class ShipController : NetworkBehaviour {
 
         transform.position = pos;
 
+      
+        if (accelerationSpeed > 5)
+        {
+            isSpeedUp = true;
+        }
+        if (isSpeedUp)
+        {
+           
 
-
+            timer -= Time.deltaTime;
+            Debug.Log(timer);
+            if (timer <= 0)
+            {
+                accelerationSpeed = 5.0f;
+                isSpeedUp = false;
+            }
+        }
 
 
         if (Input.GetKey("space") && Time.time > nextFire)
